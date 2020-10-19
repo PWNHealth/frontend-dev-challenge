@@ -32,7 +32,7 @@ Your knowledge of semantic HTML, CSS3, Vanilla Javascript, Git/Github, responsiv
 
   - **Database Images:** These imagens should be loaded from the API found at this URL: https://picsum.photos/. You can choose between display random of specific images. Note that you should also add the corresponding author name below each picture.
 
-  - **DataTables:** The table is using a third-party library called `DataTables`. You have to load the data inside the table using the [tables.json](https://pwnhealth.github.io/frontend-dev-challenge/blob/master/tables.json) file, located on the root project.
+  - **DataTables:** The table is using a third-party library called `DataTables`. You have to load the data inside the table using the [tables.json](https://github.com/PWNHealth/frontend-dev-challenge/blob/main/tables.json) file, located on the root project.
 
 
 ## How to deliver the project
