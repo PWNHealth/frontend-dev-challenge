@@ -1,0 +1,17 @@
+{
+  "name": "frontend-dev-challenge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel index.html --open",
+    "build": "parcel build index.html"
+  },
+  "repository": "git@github.com:thiagothimoteo/frontend-dev-challenge.git",
+  "author": "Thiago Thimóteo <thiago.thimoteo@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.29.0"
+  }
+}
