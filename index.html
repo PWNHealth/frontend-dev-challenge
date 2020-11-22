@@ -48,7 +48,7 @@
         </header>
 
         <div class="segment-content" data-module="notes">
-          <form class="stackGroup">
+          <form class="stackGroup" data-target="form">
             <div class="radio-group">
               <div class="radio">
                 <input id="note_type_private" type="radio" name="note_type" value="private">
@@ -61,11 +61,11 @@
             </div>
 
             <div class="stackGroup" style="--stack-group-gap: .65rem;">
-              <textarea class="textarea is-fluid" data-target="textarea" placeholder="Insert your note" maxlength="1000"></textarea>
+              <textarea class="textarea is-fluid" data-target="textarea" placeholder="Insert your note" maxlength="1000" required></textarea>
               <small data-target="counter">1000 characters remaining</small>
             </div>
 
-            <button class="button">Add Note</button>
+            <button class="button" data-target="submit">Add Note</button>
           </form>
         </div>
       </section>
