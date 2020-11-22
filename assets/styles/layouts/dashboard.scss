@@ -4,8 +4,22 @@ main {
   background-color: var(--background-color);
 }
 
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
 .kpi {
   &-number {
     font-size: 2rem;
+  }
+
+  &-consultsCompleted {
+    .card-content {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
   }
 }

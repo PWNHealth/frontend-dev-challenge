@@ -14,6 +14,10 @@
   border-radius: 4px;
   gap: 1rem;
 
+  &--fluid {
+    width: 100%;
+  }
+
   &-title {
     display: block;
     color: var(--card-main-color);
@@ -34,6 +38,6 @@
   }
 
   &.has-trailingIcon {
-    padding-right: 8rem;
+    padding-right: 7rem;
   }
 }

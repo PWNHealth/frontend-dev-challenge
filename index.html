@@ -3,6 +3,7 @@
   <head>
     <title>Healthcare</title>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="./assets/styles/main.scss">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -16,10 +17,28 @@
     </header>
     <main>
       <section class="kpis">
-        <div class="kpi card has-trailingIcon">
+        <div class="kpi card card--fluid has-trailingIcon">
           <span class="card-title">Consults (Monthly)</span>
           <strong class="kpi-number">40,000</strong>
           <i class="card-icon fas fa-calendar fa-2x"></i>
+        </div>
+        <div class="kpi card card--fluid has-trailingIcon" style="--card-main-color: #1cc88a;">
+          <span class="card-title">Consults (Annual)</span>
+          <strong class="kpi-number">215,000</strong>
+          <i class="card-icon fas fa-calendar-alt fa-2x"></i>
+        </div>
+        <div class="kpi kpi-consultsCompleted card card--fluid has-trailingIcon" style="--card-main-color: #36b9cc;">
+          <span class="card-title">Consults Completed</span>
+          <div class="card-content">
+            <strong class="kpi-number">75%</strong>
+            <div class="progress-bar" style="--progress-bar-percentege: 75%; --progress-bar-color: #36b9cc;"></div>
+          </div>
+          <i class="card-icon fas fa-clipboard-list fa-2x"></i>
+        </div>
+        <div class="kpi card card--fluid has-trailingIcon" style="--card-main-color: #f6c23e;">
+          <span class="card-title">Pending Requests</span>
+          <strong class="kpi-number">18</strong>
+          <i class="card-icon fas fa-exclamation-triangle fa-2x"></i>
         </div>
       </section>
     </main>
