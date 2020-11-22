@@ -1,0 +1,20 @@
+.segment {
+  background-color: #fff;
+  box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
+  border-radius: 6px;
+
+  &-header {
+    padding: 1em;
+    color: var(--primary-color);
+    background-color: #f8f9fc;
+    border-bottom: 1px solid #e3e6f0;
+
+    &-title {
+      font-size: 1.6rem;
+    }
+  }
+
+  &-content {
+    padding: 2.8rem 2rem;
+  }
+}

@@ -1,33 +1,55 @@
-main {
+.dashboard {
+  display: grid;
   padding: 2rem;
+  grid-template-rows: max-content;
+  gap: 3.2rem 2rem;
   min-height: calc(100vh - var(--header-height));
   background-color: var(--background-color);
-}
 
-.kpis {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  grid-template-areas:
+    "kpi kpi"
+    "notes images"
+    "datatables datatables"
+    ;
 
-  @media (max-width: 480px) {
-    grid-template-columns: 1fr;
-  }
+  &-kpis {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-area: kpi;
+    gap: 2rem;
 
-  @media (min-width: 481px) and (max-width: 1024px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-.kpi {
-  &-number {
-    font-size: 2rem;
-  }
-
-  &-consultsCompleted {
-    .card-content {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
+    @media (max-width: 480px) {
+      grid-template-columns: 1fr;
     }
+
+    @media (min-width: 481px) and (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .kpi {
+    &-number {
+      font-size: 2rem;
+    }
+
+    &-consultsCompleted {
+      .card-content {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+    }
+  }
+
+  &-notes {
+    grid-area: notes;
+  }
+
+  &-images {
+    grid-area: images;
+  }
+
+  &-dataTables {
+    grid-area: datatables;
   }
 }

@@ -15,8 +15,8 @@
     <header class="header">
       <h1 class="logo">HealthCare</h1>
     </header>
-    <main>
-      <section class="kpis">
+    <main class="dashboard">
+      <section class="dashboard-kpis">
         <div class="kpi card card--fluid has-trailingIcon">
           <span class="card-title">Consults (Monthly)</span>
           <strong class="kpi-number">40,000</strong>
@@ -40,6 +40,30 @@
           <strong class="kpi-number">18</strong>
           <i class="card-icon fas fa-exclamation-triangle fa-2x"></i>
         </div>
+      </section>
+
+      <section class="segment dashboard-notes" data-module="notes">
+        <header class="segment-header">
+          <h2 class="segment-header-title">Notes</h2>
+        </header>
+
+        <div class="segment-content">Notes</div>
+      </section>
+
+      <section class="segment dashboard-images" data-module="database-images">
+        <header class="segment-header">
+          <h2 class="segment-header-title">Database Images</h2>
+        </header>
+
+        <div class="segment-content">Images</div>
+      </section>
+
+      <section class="segment dashboard-dataTables" data-module="datatables">
+        <header class="segment-header">
+          <h2 class="segment-header-title">DataTables</h2>
+        </header>
+
+        <div class="segment-content">Datatables content</div>
       </section>
     </main>
 
