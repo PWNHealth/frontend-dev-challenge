@@ -2,6 +2,7 @@
   display: grid;
   padding: 2rem;
   grid-template-rows: max-content;
+  grid-template-columns: 1fr 1fr;
   gap: 3.2rem 2rem;
   min-height: calc(100vh - var(--header-height));
   background-color: var(--background-color);
@@ -10,7 +11,7 @@
     "kpi kpi"
     "notes images"
     "datatables datatables"
-    ;
+  ;
 
   &-kpis {
     display: grid;
