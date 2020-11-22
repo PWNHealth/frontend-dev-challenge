@@ -20,7 +20,7 @@ const Notes = (function () {
       type: getSelectedType(),
       author: {
         name: 'Jane Doe',
-        profession: 'physician'
+        profession: 'physician',
       },
       createdAt: now.toLocaleString(),
     }
@@ -63,7 +63,7 @@ const Notes = (function () {
 
     if (note.type === 'private') {
       tag.textContent = 'Private'
-      content.prepend(tag, '')
+      content.prepend(tag)
     }
 
     header.append(content)
@@ -73,9 +73,19 @@ const Notes = (function () {
 
   const buildContentHTML = (note) => {
     const content = document.createElement('p')
+    const username = note.text.match(/(^@[A-Z][a-z])\w+/g)
+    const formattedText = note.text.replace(/(^@[A-Z][a-z])\w+/g, '')
+
+    let mark = ''
+
+    if (note.type === 'private' && username) {
+      mark = document.createElement('mark')
+
+      mark.textContent = username[0]
+    }
 
     content.classList.add('notes-item-content')
-    content.textContent = note.text
+    content.append(mark, formattedText)
 
     return content
   }
