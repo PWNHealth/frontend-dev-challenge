@@ -1,0 +1,44 @@
+.notes {
+  display: grid;
+  gap: 2em;
+
+  &-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid #eee;
+    gap: 1.6rem;
+  }
+
+
+  &-item {
+    display: flex;
+    flex-direction: column;
+    gap: .65rem;
+
+    &-header {
+      color: var(--text-color);
+
+      .tag {
+        color: #fff;
+        padding: 0.05rem .55rem;
+        background-color: #f5a643;
+        border-radius: 4px;
+        margin-right: 0.5rem;
+      }
+    }
+
+    &-content {
+      color: #5a5c69;
+    }
+
+    &-content > mark {
+      color: currentColor;
+      padding: 0 0.25rem;
+      font-weight: 700;
+      background-color: #cbe6ee;
+      border-radius: 500rem;
+    }
+  }
+}

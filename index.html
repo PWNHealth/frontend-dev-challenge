@@ -47,15 +47,23 @@
           <h2 class="segment-header-title">Notes</h2>
         </header>
 
-        <div class="segment-content" data-module="notes">
-          <form class="stackGroup" data-target="form">
+        <div class="segment-content notes" data-module="notes">
+          <div class="notes-group" data-target="messages">
+            <article class="notes-item">
+              <header class="notes-item-header">
+                <small><span class="tag">Private</span> Created by the physician Jane Doe on 08/13/2020 - 09:20 am;</small>
+              </header>
+              <p class="notes-item-content"><mark>@JohnDoe</mark> the patient did not attend to the consult. Would you please reach out to him ? Thanks.</p>
+            </article>
+          </div>
+          <form class="notes-form stackGroup" data-target="form">
             <div class="radio-group">
               <div class="radio">
-                <input id="note_type_private" type="radio" name="note_type" value="private">
+                <input id="note_type_private" type="radio" name="note_type" value="private" data-target="type">
                 <label for="note_type_private">Private</label>
               </div>
               <div class="radio" >
-                <input id="note_type_public" type="radio" name="note_type" value="public" checked>
+                <input id="note_type_public" type="radio" name="note_type" value="public" data-target="type" checked>
                 <label for="note_type_public">Public</label>
               </div>
             </div>
