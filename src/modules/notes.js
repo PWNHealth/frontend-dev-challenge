@@ -6,38 +6,54 @@ const Notes = (function () {
   const types = controller.querySelectorAll('[data-target="type"]')
   const messages = controller.querySelector('[data-target="messages"]')
 
-  const handleChange = () => {
-    setCounter()
-  }
-
   const handleSubmit = (event) => {
     event.preventDefault()
 
-    const now = new Date()
+    const isValid = isValidatesPrivateNote()
 
-    const note = {
+    if (!isValid) {
+      alert('You have to add an username when a note is private')
+
+      return false
+    }
+
+    const note = createNote()
+
+    buildNoteHTML(note)
+    clearForm()
+  }
+
+  const isValidatesPrivateNote = () => {
+    const selectedType = getSelectedType()
+
+    if (selectedType !== 'private') return true
+
+    return textarea.value.match(/(^@[A-Z][a-z])\w+/g)
+  }
+
+  const getSelectedType = () => {
+    const { value } = Array.from(types).find((type) => type.checked === true)
+
+    return value
+  }
+
+  const clearForm = () => {
+    const publicInput = Array.from(types).find((type) => type.value === 'public')
+
+    textarea.value = ''
+    publicInput.checked = true
+  }
+
+  const createNote = () => {
+    return {
       text: textarea.value,
       type: getSelectedType(),
       author: {
         name: 'Jane Doe',
         profession: 'physician',
       },
-      createdAt: now.toLocaleString(),
+      createdAt: new Date().toLocaleString(),
     }
-
-    buildNoteHTML(note)
-  }
-
-  const getSelectedType = () => {
-    const { value } = Array.from(types).find((type) => type.checked === true, types)
-
-    return value
-  }
-
-  const setCounter = () => {
-    const { length: currentTextareaLength } = textarea.value
-
-    counter.textContent = `${1000 - currentTextareaLength} characters remaining`
   }
 
   const buildNoteHTML = (note) => {
@@ -90,10 +106,16 @@ const Notes = (function () {
     return content
   }
 
+  const setCounter = () => {
+    const { length: currentTextareaLength } = textarea.value
+
+    counter.textContent = `${1000 - currentTextareaLength} characters remaining`
+  }
+
   const init = () => {
     setCounter()
 
-    textarea.addEventListener('input', handleChange)
+    textarea.addEventListener('input', setCounter)
     form.addEventListener('submit', handleSubmit)
   }
 
