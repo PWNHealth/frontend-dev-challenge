@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Healthcare</title>
+    <title>Healthcare - Jaya - front-end challenge</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -42,12 +42,32 @@
         </div>
       </section>
 
-      <section class="segment dashboard-notes" data-module="notes">
+      <section class="segment dashboard-notes">
         <header class="segment-header">
           <h2 class="segment-header-title">Notes</h2>
         </header>
 
-        <div class="segment-content">Notes</div>
+        <div class="segment-content" data-module="notes">
+          <form class="stackGroup">
+            <div class="radio-group">
+              <div class="radio">
+                <input id="note_type_private" type="radio" name="note_type" value="private">
+                <label for="note_type_private">Private</label>
+              </div>
+              <div class="radio" >
+                <input id="note_type_public" type="radio" name="note_type" value="public" checked>
+                <label for="note_type_public">Public</label>
+              </div>
+            </div>
+
+            <div class="stackGroup" style="--stack-group-gap: .65rem;">
+              <textarea class="textarea is-fluid" data-target="textarea" placeholder="Insert your note" maxlength="1000"></textarea>
+              <small data-target="counter">1000 characters remaining</small>
+            </div>
+
+            <button class="button">Add Note</button>
+          </form>
+        </div>
       </section>
 
       <section class="segment dashboard-images" data-module="database-images">

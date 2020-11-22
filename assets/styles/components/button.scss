@@ -1,0 +1,16 @@
+.button {
+  font-size: 1.4rem;
+  padding: .8rem 1.2rem;
+  color: #fff;
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all .3s ease-in;
+
+  &:hover,
+  &:focus {
+    background-image: linear-gradient(90deg, rgba(#000, .15), rgba(#000, .15));
+    transition: all .3s ease-out;
+  }
+}

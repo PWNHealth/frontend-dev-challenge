@@ -1,0 +1,11 @@
+.stackGroup {
+  --stack-group-align-items: flex-start;
+  --stack-group-gap: 2rem;
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: var(--stack-group-align-items);
+  gap: var(--stack-group-gap);
+}

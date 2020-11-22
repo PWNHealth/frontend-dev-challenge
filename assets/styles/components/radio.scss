@@ -1,0 +1,33 @@
+.radio {
+  --radio-border-color: #e3e6f0;
+
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-color);
+
+  > input[type="radio"] {
+    display: none;
+
+    + label {
+      padding: .8rem 1rem;
+      border: 1px solid var(--radio-border-color);
+      border-right-color: transparent;
+
+      &:last-child {
+        border-right-color: var(--radio-border-color);
+      }
+    }
+
+    &:checked + label {
+      color: #fff;
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+  }
+
+  &-group {
+    display: inline-flex;
+  }
+}
