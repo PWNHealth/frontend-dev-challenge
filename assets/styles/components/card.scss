@@ -1,0 +1,39 @@
+.card {
+  --card-main-color: var(--primary-color);
+  --card-icon-color: #dddfeb;
+
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2.4rem 2rem;
+  color: #5a5c69;
+  background-color: #fff;
+  box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
+  border-left: 4px solid var(--card-main-color);
+  border-radius: 4px;
+  gap: 1rem;
+
+  &-title {
+    display: block;
+    color: var(--card-main-color);
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  &-icon {
+    color: var(--card-icon-color);
+
+    .has-trailingIcon & {
+      position: absolute;
+      top: 50%;
+      right: calc(4rem - 2rem);
+      transform: translate(0, -50%);
+    }
+  }
+
+  &.has-trailingIcon {
+    padding-right: 8rem;
+  }
+}
