@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  position: sticky;
+  height: var(--header-height);
+  box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
+  z-index: 1;
+}
+
+.logo {
+  color: var(--primary-color);
+  font-size: 2.8rem;
+}
