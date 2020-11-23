@@ -1,7 +1,4 @@
 const PhotoGallery = (function () {
-  const controller = document.querySelector('[data-module="gallery"]')
-  const content = controller.querySelector('[data-target="content"]')
-
   const fetchImages = async () => {
     try {
       const response = await fetch('https://picsum.photos/v2/list?limit=4')
@@ -14,6 +11,9 @@ const PhotoGallery = (function () {
   }
 
   const buildImagesHTML = (photos) => {
+    const controller = document.querySelector('[data-module="gallery"]')
+    const content = controller.querySelector('[data-target="content"]')
+
     photos.forEach((photo) => {
       const figure = document.createElement('figure')
       const img = buildImgHTML(photo)

@@ -3,9 +3,6 @@ import DataTables from 'datatables.net'
 import data from '../../tables.json'
 
 const DataTable = (function () {
-  const controller = document.querySelector('[data-module="data-table"]')
-  const table = controller.querySelector('[data-target="table"]')
-
   const buildTableHead = () => {
     const thead = document.createElement('thead')
     const tr = document.createElement('tr')
@@ -52,6 +49,9 @@ const DataTable = (function () {
   }
 
   const buildTableHTML = () => {
+    const controller = document.querySelector('[data-module="data-table"]')
+    const table = controller.querySelector('[data-target="table"]')
+
     const tableHead = buildTableHead()
     const tableBody = buildTableBody()
 
