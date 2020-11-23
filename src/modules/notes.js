@@ -3,13 +3,12 @@ const Notes = function () {
 
   const init = () => {
     setTargets()
+    setCounter()
 
     const { textarea, form } = targets
 
     textarea.addEventListener('input', setCounter)
     form.addEventListener('submit', handleSubmit)
-
-    setCounter()
   }
 
   const setTargets = () => {
