@@ -31,6 +31,18 @@
     gap: 2rem;
     color: var(--text-color);
 
+    @media (max-width: 767px) {
+      grid-template-columns: minmax(auto, 100%);
+      grid-template-rows: auto auto auto auto minmax(4rem, auto);
+      grid-template-areas:
+        "length"
+        "filter"
+        "table"
+        "info"
+        "pagination"
+      ;
+    }
+
     .table {
       grid-area: table;
     }
@@ -72,6 +84,10 @@
   &_filter,
   &_paginate {
     text-align: right;
+
+    @media (max-width: 767px) {
+      text-align: left;
+    }
   }
 
   &_length,

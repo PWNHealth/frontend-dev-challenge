@@ -69,7 +69,7 @@
     }
 
     > .segment-content > :last-child {
-      overflow: hidden;
+      overflow-x: auto;
     }
   }
 }
