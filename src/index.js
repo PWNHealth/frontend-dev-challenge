@@ -1,8 +1,13 @@
 import 'regenerator-runtime/runtime'
 import { Notes, PhotoGallery, DataTable } from './modules'
+import StaticSession from './session'
 
 document.addEventListener('DOMContentLoaded', function () {
-  Notes.init()
-  PhotoGallery.init()
-  DataTable.init()
+  window.StaticSession = StaticSession
+
+  StaticSession.set('currentUser', { name: 'Jane Doe', profession: 'Physician' }) // Creates dummy current user
+
+  const modules = [Notes, PhotoGallery, DataTable]
+
+  modules.forEach((module) => module.init())
 })

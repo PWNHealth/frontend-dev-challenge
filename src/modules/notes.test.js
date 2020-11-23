@@ -1,4 +1,5 @@
 import { screen, fireEvent } from '@testing-library/dom'
+import StaticSession from '../session'
 
 import Notes from './notes'
 
@@ -36,7 +37,15 @@ describe('Notes', () => {
   beforeEach(() => {
     document.body.innerHTML = html
 
+    window.StaticSession = StaticSession
+
+    StaticSession.set('currentUser', { name: 'Jane Doe', profession: 'physician' })
+
     Notes.init()
+  })
+
+  afterEach(() => {
+    StaticSession.set('notes', [])
   })
 
   describe('#init', () => {
@@ -111,6 +120,41 @@ describe('Notes', () => {
       expect(textarea).toHaveValue('')
       expect(headerText.innerHTML).toMatch(/<span class="tag">Private<\/span>Created by the physician Jane Doe/)
       expect(note.innerHTML).toMatch(/<mark>@JohnDoe<\/mark> Test note/)
+    })
+  })
+
+  describe('#loadNotes', () => {
+    beforeEach(() => {
+      document.body.innerHTML = html
+
+      window.StaticSession = StaticSession
+
+      StaticSession.set('currentUser', { name: 'Jane Doe', profession: 'physician' })
+
+      StaticSession.set('notes', [
+        {
+          text: '@JohnDoe this is a public message',
+          type: 'public',
+          author: { name: 'Foo', profession: 'Bar' },
+          createdAt: '11/23/2020, 6:06:47 PM',
+        },
+        {
+          text: '@JaneDoe this is a private message',
+          type: 'private',
+          author: { name: 'Fizz', profession: 'Buzz' },
+          createdAt: '11/23/2020, 6:07:49 PM',
+        },
+      ])
+
+      Notes.init()
+    })
+
+    it('shows persisted notes', () => {
+      const note1 = screen.getByText(/this is a public message/)
+      const note2 = screen.getByText(/this is a private message/)
+
+      expect(note1).toBeInTheDocument()
+      expect(note2).toBeInTheDocument()
     })
   })
 })

@@ -4,6 +4,7 @@ const Notes = function () {
   const init = () => {
     setTargets()
     setCounter()
+    loadNotes()
 
     const { textarea, form } = targets
 
@@ -29,6 +30,14 @@ const Notes = function () {
     counter.textContent = `${1000 - textarea.value.length} characters remaining`
   }
 
+  const loadNotes = () => {
+    const notes = StaticSession.get('notes')
+
+    if (!notes) return
+
+    notes.forEach(buildNoteHTML)
+  }
+
   const handleSubmit = (event) => {
     event.preventDefault()
 
@@ -43,6 +52,7 @@ const Notes = function () {
     const note = createNote()
 
     buildNoteHTML(note)
+    persistNote(note)
     clearForm()
   }
 
@@ -64,16 +74,23 @@ const Notes = function () {
 
   const createNote = () => {
     const { textarea } = targets
+    const { name, profession } = StaticSession.get('currentUser')
 
     return {
       text: textarea.value,
       type: getSelectedType(),
       author: {
-        name: 'Jane Doe',
-        profession: 'physician',
+        name,
+        profession,
       },
       createdAt: new Date().toLocaleString(),
     }
+  }
+
+  const persistNote = (note) => {
+    const notes = StaticSession.get('notes') || []
+
+    StaticSession.set('notes', [...notes, { ...note }])
   }
 
   const clearForm = () => {
