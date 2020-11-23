@@ -1,10 +1,34 @@
-const Notes = (function () {
-  const controller = document.querySelector('[data-module="notes"]')
-  const textarea = controller.querySelector('[data-target="textarea"]')
-  const counter = controller.querySelector('[data-target="counter"]')
-  const form = controller.querySelector('[data-target="form"]')
-  const types = controller.querySelectorAll('[data-target="type"]')
-  const messages = controller.querySelector('[data-target="messages"]')
+const Notes = function () {
+  let targets = {}
+
+  const init = () => {
+    setTargets()
+
+    const { textarea, form } = targets
+
+    textarea.addEventListener('input', setCounter)
+    form.addEventListener('submit', handleSubmit)
+
+    setCounter()
+  }
+
+  const setTargets = () => {
+    const controller = document.querySelector('[data-module="notes"]')
+
+    targets = {
+      textarea: controller.querySelector('[data-target="textarea"]'),
+      counter: controller.querySelector('[data-target="counter"]'),
+      form: controller.querySelector('[data-target="form"]'),
+      types: controller.querySelectorAll('[data-target="type"]'),
+      messages: controller.querySelector('[data-target="messages"]'),
+    }
+  }
+
+  const setCounter = () => {
+    const { textarea, counter } = targets
+
+    counter.textContent = `${1000 - textarea.value.length} characters remaining`
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -24,6 +48,7 @@ const Notes = (function () {
   }
 
   const isValidatesPrivateNote = () => {
+    const { textarea } = targets
     const selectedType = getSelectedType()
 
     if (selectedType !== 'private') return true
@@ -32,19 +57,15 @@ const Notes = (function () {
   }
 
   const getSelectedType = () => {
+    const { types } = targets
     const { value } = Array.from(types).find((type) => type.checked === true)
 
     return value
   }
 
-  const clearForm = () => {
-    const publicInput = Array.from(types).find((type) => type.value === 'public')
-
-    textarea.value = ''
-    publicInput.checked = true
-  }
-
   const createNote = () => {
+    const { textarea } = targets
+
     return {
       text: textarea.value,
       type: getSelectedType(),
@@ -56,7 +77,16 @@ const Notes = (function () {
     }
   }
 
+  const clearForm = () => {
+    const { types, textarea } = targets
+    const publicInput = Array.from(types).find((type) => type.value === 'public')
+
+    textarea.value = ''
+    publicInput.checked = true
+  }
+
   const buildNoteHTML = (note) => {
+    const { messages } = targets
     const container = document.createElement('article')
     const header = buildHeaderHTML(note)
     const content = buildContentHTML(note)
@@ -108,22 +138,9 @@ const Notes = (function () {
     return content
   }
 
-  const setCounter = () => {
-    const { length: currentTextareaLength } = textarea.value
-
-    counter.textContent = `${1000 - currentTextareaLength} characters remaining`
-  }
-
-  const init = () => {
-    setCounter()
-
-    textarea.addEventListener('input', setCounter)
-    form.addEventListener('submit', handleSubmit)
-  }
-
   return {
     init,
   }
-})()
+}
 
-export default Notes
+export default Notes()
