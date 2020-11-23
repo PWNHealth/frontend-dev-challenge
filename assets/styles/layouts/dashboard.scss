@@ -13,6 +13,17 @@
     "datatables datatables"
   ;
 
+  @media (max-width: 480px) {
+    grid-template-areas:
+      "kpi"
+      "notes"
+      "images"
+      "datatables"
+    ;
+    grid-template-columns: minmax(auto, 100%);
+  }
+
+
   &-kpis {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -52,5 +63,13 @@
 
   &-dataTables {
     grid-area: datatables;
+
+    .table {
+      min-width: 100%;
+    }
+
+    > .segment-content > :last-child {
+      overflow: hidden;
+    }
   }
 }

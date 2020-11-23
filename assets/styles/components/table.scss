@@ -1,3 +1,83 @@
 .table {
   width: 100%;
+  border-collapse: collapse;
+
+  &.dataTable {
+    thead > tr > td {
+      font-weight: 700;
+      border-bottom-width: 3px;
+    }
+
+    th, td {
+      padding: 1.6rem 1.2rem;
+      color: var(--text-color);
+      border: 1px solid #e3e6f0;
+    }
+  }
+}
+
+.dataTables {
+  &_wrapper {
+    --dataTables-border-color: #e3e6f0;
+
+    display: grid;
+    grid-template-areas:
+      "length filter"
+      "table table"
+      "info pagination"
+    ;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto minmax(4rem, auto);
+    gap: 2rem;
+    color: var(--text-color);
+
+    .table {
+      grid-area: table;
+    }
+  }
+
+  &_length {
+    grid-area: length;
+  }
+
+  &_filter {
+    grid-area: filter;
+  }
+
+
+  &_info {
+    grid-area: info;
+  }
+
+  &_paginate {
+    grid-area: pagination;
+
+    .paginate_button {
+      padding: .8rem 1.2rem;
+      color: var(--primary-color);
+      border: 1px solid var(--dataTables-border-color);
+
+      &.disabled {
+        color: var(--text-color);
+      }
+
+      &.current {
+        color: #fff;
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+      }
+    }
+  }
+
+  &_filter,
+  &_paginate {
+    text-align: right;
+  }
+
+  &_length,
+  &_filter,
+  &_paginate,
+  &_info {
+   align-self: center;
+  }
 }
