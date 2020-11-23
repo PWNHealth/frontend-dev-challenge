@@ -1,3 +1,4 @@
 import Notes from './notes'
+import PhotoGallery from './photo-gallery'
 
-export { Notes }
+export { Notes, PhotoGallery }
