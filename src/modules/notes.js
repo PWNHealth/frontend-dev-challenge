@@ -89,19 +89,21 @@ const Notes = (function () {
 
   const buildContentHTML = (note) => {
     const content = document.createElement('p')
-    const username = note.text.match(/(^@[A-Z][a-z])\w+/g)
-    const formattedText = note.text.replace(/(^@[A-Z][a-z])\w+/g, '')
+    const usernames = note.text.match(/(@[A-Z][a-z])\w+/g)
+    let formattedText = note.text
 
-    let mark = ''
+    if (usernames) {
+      usernames.forEach((username) => {
+        const mark = document.createElement('mark')
 
-    if (note.type === 'private' && username) {
-      mark = document.createElement('mark')
+        mark.textContent = username
 
-      mark.textContent = username[0]
+        formattedText = formattedText.replace(/(@[A-Z][a-z]\w+)(?!(.(?!<mark))*<\/mark>)/, mark.outerHTML)
+      })
     }
 
     content.classList.add('notes-item-content')
-    content.append(mark, formattedText)
+    content.innerHTML = formattedText
 
     return content
   }
