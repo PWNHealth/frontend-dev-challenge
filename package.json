@@ -35,5 +35,9 @@
     "setupFilesAfterEnv": [
       "<rootDir>/setupTests.js"
     ]
+  },
+  "dependencies": {
+    "datatables.net": "^1.10.22",
+    "jquery": "^3.5.1"
   }
 }

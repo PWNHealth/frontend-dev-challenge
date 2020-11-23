@@ -1,3 +1,5 @@
+import $ from 'jquery'
+import DataTables from 'datatables.net'
 import data from '../../tables.json'
 
 const DataTable = (function () {
@@ -54,9 +56,15 @@ const DataTable = (function () {
     const tableBody = buildTableBody()
 
     table.append(tableHead, tableBody)
+    $(table).DataTable()
+  }
+
+  const initDatatTablesPlugin = () => {
+    DataTables(window, $)
   }
 
   const init = async () => {
+    initDatatTablesPlugin()
     buildTableHTML()
   }
 
