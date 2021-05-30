@@ -16,11 +16,12 @@ Create an app using React and React Hooks that will be a Covid report.
 - We want to evaluate how you handle the Mobile First approach.  Mobile design is provided, get creative with responsive desktop designs;
 - Add tests for your code (we recommend [Jest](https://jestjs.io/) but you can use any framework you like).
 
-- When you open the app the main page will display a zoomed map at Brazil, and a dropped pin. When you click on this pin it should open a detail page about the Covid data in the country.
+- When you open the app the main page will display a zoomed map at Brazil, and a dropped pin. When you click on this pin it should open a detail page about the *latest* Covid data in the *country*.
 - The URL should change ([consider using react-router](https://github.com/ReactTraining/react-router)) when a dropped pin is clicked. If a user copy/pastes the URL into a new window, the same covid detail page should display;
-- Detail page should show the number of confirmed, recovered and death cases for that country, and the date of the last report update
-- There should be a search bar allowing users to search for a country;
-- When a country is searched the map page should zoom to that country, and a pin with the details should appear.
+- Detail page should show the number of confirmed, recovered and death cases for that country, and the date of the last report update (format: MM/DD/YYYY, HH:MM (timezone));
+- There should be a search bar allowing users to search for a country. As the user types, some suggested country names should appear;
+- When a country is searched the map page should zoom to that country, and a pin with the details should appear. The dropped pin from the previous country should disapear;
+- Display an error if the search does not find any result.
 
 ### Bonus (optional)
 We would prefer you spent as much time focusing on performance and accessibility as possible, but if you finish early here are some options for bonus points:
