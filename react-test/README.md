@@ -35,7 +35,6 @@ If you finish early here are some options for bonus points:
 - Any cool feature you want to add. Surprise us! :)
 
 ### Submission
-- Fork this repository to your GitHub account;
-- Read the README carefully. All the information you need to start working on is there. But if you have any questions feel free to reach out to us;
+- Fork this repository to your GitHub account. You must create a private repository;
 - When you're done open a pull request with your project. Remember to add instructions on how to run the project, tests, etc.;
 - If you think it's useful, publish the project on GitHub Pages, Netlify or Heroku. Don't forget to send the link along with the PR.
