@@ -4,7 +4,8 @@
 
 ### Overview
 Create an app using React and React tools/features that will be a Covid report.
-You can find the mockups here: https://www.figma.com/file/fhHLjaROBm1Pc2Ces6G49g/react-challenge-mockups?node-id=103%3A1
+
+:arrow_right: You can find the mockups [here](https://www.figma.com/file/fhHLjaROBm1Pc2Ces6G49g/react-challenge-mockups?node-id=103%3A1).
 
 ### Read this file carefully. All the information you need to start working on is there. But if you have any questions feel free to reach out to us;
 
