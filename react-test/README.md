@@ -1,7 +1,10 @@
-`# React challenge - Covid report`
+# `React challenge - Covid report`
+
+***
 
 ### Overview
 Create an app using React and React tools/features that will be a Covid report.
+You can find the mockups here: https://www.figma.com/file/fhHLjaROBm1Pc2Ces6G49g/react-challenge-mockups?node-id=103%3A1
 
 ### Read this file carefully. All the information you need to start working on is there. But if you have any questions feel free to reach out to us;
 
@@ -10,7 +13,7 @@ Create an app using React and React tools/features that will be a Covid report.
 - We'd like to see how you handle your CSS with a preprocessor, Styled components, or CSS Modules.
 - The font-family used in the mockups is [Nunito](https://fonts.google.com/specimen/Nunito?query=nunito);
 - We prefer to see effective use of state management to save the API data, thoughtfulness in component building and focus on performance, responsiveness and over styling if you are running out of time. We'll evaluate the quality and organization of your code - even if it is 'incomplete'.
-- Mobile design is provided, get creative with responsive desktop designs (You will find all the assets/colors in the Figma file). We want to evaluate how you handle the Mobile First approach.
+- [Mobile design is provided](https://www.figma.com/file/fhHLjaROBm1Pc2Ces6G49g/react-challenge-mockups?node-id=103%3A1), get creative with responsive desktop designs (You will find all the colors in the Figma file). We want to evaluate how you handle the Mobile First approach.
 - Spend, at max, 8 hours on this project;
 
 ### Requirements
