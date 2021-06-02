@@ -5,7 +5,7 @@
 ### Overview
 Create an app using React and React tools/features that will be a Covid report.
 
-:arrow_right: You can find the mockups [here](https://www.figma.com/file/fhHLjaROBm1Pc2Ces6G49g/react-challenge-mockups?node-id=103%3A1).
+:arrow_right: You can find the mockups [here](https://www.figma.com/file/fhHLjaROBm1Pc2Ces6G49g/react-challenge-mockups?node-id=103%3A1). You will find all the colors/assets in the Figma file, but you need to log in/sign up first.
 
 ### Read this file carefully. All the information you need to start working on is there. But if you have any questions feel free to reach out to us;
 
@@ -14,18 +14,18 @@ Create an app using React and React tools/features that will be a Covid report.
 - We'd like to see how you handle your CSS with a preprocessor, Styled components, or CSS Modules.
 - The font-family used in the mockups is [Nunito](https://fonts.google.com/specimen/Nunito?query=nunito);
 - We prefer to see effective use of state management to save the API data, thoughtfulness in component building and focus on performance, responsiveness and over styling if you are running out of time. We'll evaluate the quality and organization of your code - even if it is 'incomplete'.
-- [Mobile design is provided](https://www.figma.com/file/fhHLjaROBm1Pc2Ces6G49g/react-challenge-mockups?node-id=103%3A1), get creative with responsive desktop designs (You will find all the colors in the Figma file). We want to evaluate how you handle the Mobile First approach.
+- [Mobile design is provided](https://www.figma.com/file/fhHLjaROBm1Pc2Ces6G49g/react-challenge-mockups?node-id=103%3A1), get creative with responsive desktop designs. We want to evaluate how you handle the Mobile First approach.
 - Spend, at max, 8 hours on this project;
 
 ### Requirements
 - Integrate with [COVID-19 data API](https://rapidapi.com/Gramzivi/api/covid-19-data). You'll need to create an account at [RapidAPI](https://rapidapi.com/) to get a free API key.
 - Integrate with [Open Layers Map API](https://openlayers.org/en/latest/examples/icon-color.html). Download the package with [Yarn](https://yarnpkg.com/package/ol) or [npm](https://www.npmjs.com/package/ol);
 
-- When you open the app the main page will display a zoomed map at Brazil and a dropped pin. When you click on this pin it should open a page with details about the *latest* Covid data in the *country*.
+- When you open the app the main page will display a zoomed map of Brazil and a dropped pin. When you click on this pin it should open a page with details about the *latest* Covid data in the *country*.
 - The URL should change ([consider using react-router](https://github.com/ReactTraining/react-router)) when a dropped pin is clicked/detail page is open. If a user copy/pastes the URL into a new window, the same covid detail page should display;
 - Detail page should display the country name, number of confirmed, recovered and death cases, and the date of the last report update (format: MM/DD/YYYY, HH:MM (timezone));
 - There should be a search bar allowing users to search for a country.
-- When a country is searched the map page should zoom to that country, and a pin should appear. The dropped pin from the previous country should disapear; 
+- When a country is searched the map page should zoom to that country, and a pin should appear. The dropped pin from the previous country should disappear; 
 - Display an error if:
     - the search does not return any results;
     - the API return an error;
