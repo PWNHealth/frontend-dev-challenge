@@ -41,5 +41,5 @@ If you finish early here are some options for bonus points:
 ### Submission
 - Create a *private* repository in your Github account and add your solution there.
 - When you're done open a pull request with your project. Remember to add instructions on how to run the project, tests, etc.;
-- Tag the following people to review the PR: @ptonella, @thiagothimoteo, @fernando-f and @augustogoldoni. If you cannot add these people as reviewers just drop a comment on the PR.
+- Tag the following people to review the PR: `@ptonella`, `@thiagothimoteo`, `@fernando-f` and `@augustogoldoni`. If you cannot add these people as reviewers just drop a comment on the PR.
 - If you think it's useful, publish the project on GitHub Pages, Netlify or Heroku. Don't forget to send the link along with the PR
