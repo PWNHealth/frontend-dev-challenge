@@ -41,5 +41,6 @@ If you finish early here are some options for bonus points:
 ### Submission
 - Fork this repository to your GitHub account. You must create a private repository;
 - When you're done open a pull request with your project. Remember to add instructions on how to run the project, tests, etc.;
-- Tag the `@PWNHealth/frontend-challenge-reviewers` group as reviewer (If you are not able to tag this group, just open the PR without tagging anyone).
-- If you think it's useful, publish the project on GitHub Pages, Netlify or Heroku. Don't forget to send the link along with the PR.
+- Search for the `PWNHealth/frontend-challenge-reviewers` group and tag it as reviewer (If you are not able to tag this group, just open the PR without tagging anyone).
+<img width="323" alt="Screen Shot 2021-06-29 at 11 41 36" src="https://user-images.githubusercontent.com/381546/123818088-13fb5380-d8cf-11eb-818c-392fce6a73a0.png">
+- If you think it's useful, publish the project on GitHub Pages, Netlify or Heroku. Don't forget to send the link along with the PR
